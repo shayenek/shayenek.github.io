@@ -1,0 +1,142 @@
+[
+    {
+        "id": 0,
+        "url": "hermes-technic",
+        "name": "Hermes Technic",
+        "monitor": true,
+        "category": [
+            "favorite",
+            "frontend",
+            "identification"
+        ],
+        "description": "Logo, website, business cards",
+        "descriptionLong": "",
+        "images": [
+            "website.jpg"
+        ],
+        "previous": "#",
+        "next": "jaklon-zaopatrzenie"
+    },
+    {
+        "id": 1,
+        "url": "jaklon-zaopatrzenie",
+        "name": "Zaopatrzenie Przemys\u0142u Jaklon",
+        "monitor": false,
+        "category": [
+            "favorite",
+            "frontend"
+        ],
+        "description": "HTML5 + BootStrap - RWD Website",
+        "descriptionLong": "",
+        "images": [
+            "bc-mockup.jpg"
+        ],
+        "previous": "hermes-technic",
+        "next": "jaklon"
+    },
+    {
+        "id": 2,
+        "url": "jaklon",
+        "name": "Jaklon",
+        "monitor": true,
+        "category": [
+            "favorite",
+            "frontend",
+            "identification",
+            "print"
+        ],
+        "description": "HTML5 + BootStrap - RWD Website",
+        "descriptionLong": "",
+        "images": [
+            "jaklon-full.jpg"
+        ],
+        "previous": "jaklon-zaopatrzenie",
+        "next": "kostrza"
+    },
+    {
+        "id": 3,
+        "url": "kostrza",
+        "name": "Kostrza",
+        "monitor": false,
+        "category": [
+            "favorite",
+            "frontend"
+        ],
+        "description": "HTML5 + BootStrap - RWD Website",
+        "descriptionLong": "",
+        "images": [
+            "mockup.jpg"
+        ],
+        "previous": "jaklon",
+        "next": "infographic"
+    },
+    {
+        "id": 4,
+        "url": "infographic",
+        "name": "Infographic",
+        "monitor": false,
+        "category": [
+            "favorite",
+            "other"
+        ],
+        "description": "Photoshp, Illustrator",
+        "descriptionLong": "",
+        "images": [
+            "full.jpg"
+        ],
+        "previous": "kostrza",
+        "next": "jaklon-cnc"
+    },
+    {
+        "id": 5,
+        "url": "jaklon-cnc",
+        "name": "JAKLON CMS",
+        "monitor": false,
+        "category": [
+            "favorite",
+            "frontend",
+            "backend"
+        ],
+        "description": "PHP, SQL, HTML5 + BootStrap",
+        "descriptionLong": "",
+        "images": [
+            "splash.jpg"
+        ],
+        "previous": "infographic",
+        "next": "zlobek-jagodka"
+    },
+    {
+        "id": 6,
+        "url": "zlobek-jagodka",
+        "name": "\u017b\u0142obek Jag\u00f3dka",
+        "monitor": false,
+        "category": [
+            "frontend"
+        ],
+        "description": "HTML5 + BootStrap - RWD Website",
+        "descriptionLong": "",
+        "images": [
+            "website.jpg"
+        ],
+        "previous": "jaklon-cnc",
+        "next": "jazz-concert"
+    },
+    {
+        "id": 7,
+        "url": "jazz-concert",
+        "name": "Jazz Concert",
+        "monitor": false,
+        "category": [
+            "other"
+        ],
+        "description": "Ticket, Poster, Rollup - Photoshop + Illustrator",
+        "descriptionLong": "",
+        "images": [
+            "mockup.jpg",
+            "plakat.jpg",
+            "rollup.jpg"
+        ],
+        "previous": "zlobek-jagodka",
+        "next": "portfolio"
+    }
+]

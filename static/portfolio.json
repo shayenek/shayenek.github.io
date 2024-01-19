@@ -1,0 +1,58 @@
+[
+    { 
+        "id": "1", "url": "hermes-technic", "name": "Hermes Technic", "monitor": true, "category": ["favorite", "frontend", "identification"], 
+        "description": "Logo, website, business cards",
+        "descriptionLong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", 
+        "images": ["splash.jpg"],
+        "previous": "portfolio", "next": "jaklon-zaopatrzenie"
+    },
+    { 
+        "id": "2", "url": "jaklon-zaopatrzenie", "name": "Zaopatrzenie Przemysłu Jaklon", "monitor": true, "category": ["favorite", "frontend"], 
+        "description": "HTML5 + BootStrap - RWD Website",
+        "descriptionLong": "", 
+        "images": [""],
+        "previous": "hermes-technic", "next": "jaklon"  
+    },
+    { 
+        "id": "3", "url": "jaklon", "name": "Jaklon", "monitor": true, "category": ["favorite", "frontend", "identification", "print"],
+        "description": "HTML5 + BootStrap - RWD Website",
+        "descriptionLong": "Test", 
+        "images": ["jaklon-full.jpg"],
+        "previous": "jaklon-zaopatrzenie", "next": "kostrza"   
+    },
+    { 
+        "id": "4", "url": "kostrza", "name": "Kostrza", "monitor": false, "category": ["favorite", "frontend"],
+        "description": "HTML5 + BootStrap - RWD Website", 
+        "descriptionLong": "",
+        "images": [""],
+        "previous": "jaklon", "next": "infographic"   
+    },
+    { 
+        "id": "5", "url": "infographic", "name": "Infographic", "monitor": false, "category": ["favorite", "other"], 
+        "description": "Photoshp, Illustrator", 
+        "descriptionLong": "",
+        "images": ["full.png"],
+        "previous": "kostrza", "next": "jaklon-cnc"  
+    },
+    { 
+        "id": "6", "url": "jaklon-cnc", "name": "JAKLON CMS", "monitor": true, "category": ["favorite", "frontend", "backend"], 
+        "description": "PHP, SQL, HTML5 + BootStrap", 
+        "descriptionLong": "",
+        "images": [""],
+        "previous": "infographic", "next": "zlobkek-jagodka"
+    },
+    { 
+        "id": "7", "url": "zlobkek-jagodka", "name": "Żłobek Jagódka", "monitor": false, "category": ["frontend"], 
+        "description": "HTML5 + BootStrap - RWD Website", 
+        "descriptionLong": "",
+        "images": [""],
+        "previous": "jaklon-cnc", "next": "jazz-concert"
+    },
+    { 
+        "id": "8", "url": "jazz-concert", "name": "Jazz Concert", "monitor": false, "category": ["other"],  
+        "description": "Ticket, Poster, Rollup - Photoshop + Illustrator", 
+        "descriptionLong": "",
+        "images": ["mockup.jpg", "rollup.jpg"],
+        "previous": "zlobkek-jagodka", "next": "portfolio"
+    }
+]
