@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasińscy Euro 2024 - kalkulator wyników</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <main class="flex flex-col p-4 justify-center items-center">
+        <h1 class="font-bold text-3xl">Jasińscy Euro 2024</h1>
+        <p class="text-base text-center my-4">Poniżej znajduje się lista meczów grupowych. Wpisz swoje obstawione wyniki a otrzymasz sumę punktów. (trafiony wynik: 3pkt, trafiony zwycięzca: 1pkt)</p>
+        <div id="matches" class="flex flex-col w-full mb-12"></div>
+        
+        <div class="flex items-center justify-center gap-8 fixed bottom-0 left-0 right-0 p-3 bg-gray-400 text-gray-600 text-sm shadow-sm">
+            <div class="flex items-center gap-2">
+                <button id="calculatepoints" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Oblicz punkty</button>
+                <button id="reset" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Resetuj</button>
+            </div>
+            <div class="text-white text-xl font-bold">
+                Wynik: <span id="points">0</span>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let fetchedData = null;
+        
+        fetch('euro2024data.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                fetchedData = data;
+                createMatchDivsFromData(data);
+                loadMyScoresFromLocalStorage();
+                calculatePoints();
+            })
+            .catch(error => {
+                console.error('There has been a problem with your fetch operation:', error);
+            });
+
+        function createMatchDivsFromData(data) {
+            const container = document.getElementById('matches');
+            data.forEach((match, index) => {
+                // Add group header every 6 matches
+                if (index % 6 === 0) {
+                    const groupHeader = document.createElement('h2');
+                    groupHeader.classList.add('font-bold', 'text-xl', 'mt-6', 'mb-2', 'text-center');
+                    groupHeader.innerText = `Grupa ${String.fromCharCode(65 + index / 6)}`;
+                    container.appendChild(groupHeader);
+                }
+                const matchDiv = document.createElement('div');
+                matchDiv.classList.add('flex', 'flex-col', 'item', 'mb-8');
+                matchDiv.innerHTML = `
+                    <div id="match_id_${match.match_id}" class="flex gap-4 border rounded border-gray-600 p-3 py-5 bg-gray-100">
+                        <div class="flex flex-col items-center grow">
+                            <div class="flex items-center mb-1">
+                                <img src="images/${match.team1_flag}.png" alt="${match.team1_name}" class="mr-2" width="26" height="27">
+                                <span class="font-bold mb-1">${match.team1_name}</span>
+                            </div>
+                            <div class="flex items-center">
+                                <button class="flex items-center justify-center bg-green-700 text-white w-6 h-6 mr-2 text-lg" onclick="incrementScore('match_${match.match_id}_team1')">+</button>
+                                <input type="number" id="match_${match.match_id}_team1" placeholder="0" class="border border-gray-500 rounded h-8 w-16 text-center">
+                                <button class="flex items-center justify-center bg-red-700 text-white w-6 h-6 ml-2 text-lg" onclick="decrementScore('match_${match.match_id}_team1')">-</button>
+                            </div>
+                        </div>
+                        <span class="font-bold text-3xl">:</span>
+                        <div class="flex flex-col items-center grow">
+                            <div class="flex items-center mb-1">
+                                <img src="images/${match.team2_flag}.png" alt="${match.team2_name}" class="mr-2" width="26" height="27">
+                                <span class="font-bold mb-1">${match.team2_name}</span>
+                            </div>
+                            <div class="flex items-center">
+                                <button class="flex items-center justify-center bg-green-700 text-white w-6 h-6 mr-2 text-lg" onclick="incrementScore('match_${match.match_id}_team2')">+</button>
+                                <input type="number" id="match_${match.match_id}_team2" placeholder="0" class="border border-gray-500 rounded h-8 w-16 text-center">
+                                <button class="flex items-center justify-center bg-red-700 text-white w-6 h-6 ml-2 text-lg" onclick="decrementScore('match_${match.match_id}_team2')">-</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(matchDiv);
+            });
+        }
+
+        function incrementScore(inputId) {
+            const input = document.getElementById(inputId);
+            if (input) {
+                let currentValue = parseInt(input.value);
+                if (isNaN(currentValue)) {
+                    currentValue = 0;
+                }
+                input.value = currentValue + 1;
+                saveScoresToLocalStorage();
+            }
+        }
+
+        function decrementScore(inputId) {
+            const input = document.getElementById(inputId);
+            if (input) {
+                let currentValue = parseInt(input.value);
+                if (isNaN(currentValue)) {
+                    currentValue = 0;
+                }
+                if (currentValue > 0) {
+                    input.value = currentValue - 1;
+                }
+                saveScoresToLocalStorage();
+            }
+        }
+
+        document.getElementById('calculatepoints').addEventListener('click', calculatePoints);
+
+        function calculatePoints() {
+            let points = 0;
+            fetchedData.forEach((match, index) => {
+                const team1Score = parseInt(document.getElementById(`match_${match.match_id}_team1`).value) || 0;
+                const team2Score = parseInt(document.getElementById(`match_${match.match_id}_team2`).value) || 0;
+                if (isNaN(team1Score) || isNaN(team2Score)) {
+                    return;
+                }
+                if (team1Score === match.team1_score && team2Score === match.team2_score) {
+                    console.log('Trafiony wynik dla meczu ' + match.match_id);
+                    points += 3;
+                    document.getElementById(`match_id_${match.match_id}`).classList.remove('bg-orange-300', 'bg-red-300');
+                    document.getElementById(`match_id_${match.match_id}`).classList.add('bg-green-300');
+                } else if (team1Score > team2Score && match.winner === 'team1') {
+                    console.log('Trafiony zwycięzca dla meczu ' + match.match_id);
+                    points += 1;
+                    document.getElementById(`match_id_${match.match_id}`).classList.remove('bg-orange-300', 'bg-red-300');
+                    document.getElementById(`match_id_${match.match_id}`).classList.add('bg-orange-300');
+                } else if (team1Score < team2Score && match.winner === 'team2') {
+                    console.log('Trafiony zwycięzca dla meczu ' + match.match_id);
+                    points += 1;
+                    document.getElementById(`match_id_${match.match_id}`).classList.remove('bg-orange-300', 'bg-red-300');
+                    document.getElementById(`match_id_${match.match_id}`).classList.add('bg-orange-300');
+                } else {
+                    document.getElementById(`match_id_${match.match_id}`).classList.remove('bg-orange-300', 'bg-red-300');
+                    document.getElementById(`match_id_${match.match_id}`).classList.add('bg-red-300');
+                }
+
+            });
+            document.getElementById('points').innerText = points;
+
+            saveScoresToLocalStorage();
+        }
+
+        document.getElementById('reset').addEventListener('click', resetScores);
+
+        function resetScores() {
+            // Show confirmation dialog
+            if (confirm("Na pewno chcesz zrestować swoje wyniki?")) {
+                // User confirmed, proceed with reset
+                fetchedData.forEach((match, index) => {
+                    document.getElementById(`match_${match.match_id}_team1`).value = '';
+                    document.getElementById(`match_${match.match_id}_team2`).value = '';
+                    document.getElementById(`match_id_${match.match_id}`).classList.remove('bg-green-300', 'bg-orange-300', 'bg-red-300');
+                });
+                document.getElementById('points').innerText = 0;
+                localStorage.removeItem('scores');
+            } else {
+                // User canceled, do nothing
+                return;
+            }
+        }
+
+        function loadMyScoresFromLocalStorage() {
+            const scores = JSON.parse(localStorage.getItem('scores'));
+            if (scores) {
+                fetchedData.forEach((match, index) => {
+                    const matchScores = scores[match.match_id];
+                    if (matchScores) {
+                        document.getElementById(`match_${match.match_id}_team1`).value = matchScores.team1_score;
+                        document.getElementById(`match_${match.match_id}_team2`).value = matchScores.team2_score;
+                    }
+                });
+            }
+        }
+
+        function saveScoresToLocalStorage() {
+            const scores = {};
+            fetchedData.forEach((match, index) => {
+                scores[match.match_id] = {
+                    team1_score: document.getElementById(`match_${match.match_id}_team1`).value || 0,
+                    team2_score: document.getElementById(`match_${match.match_id}_team2`).value || 0
+                };
+            });
+            localStorage.setItem('scores', JSON.stringify(scores));
+        }
+
+    </script>
+</body>
+</html>
