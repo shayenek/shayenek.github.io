@@ -5,7 +5,7 @@
         "team1_flag": "de",
         "team2_name": "Szkocja",
         "team2_score": 1,
-        "team2_flag": "gb",
+        "team2_flag": "gb-sct",
         "winner": "team1",
         "winner_name": "Niemcy"
     },
@@ -32,7 +32,7 @@
     {
         "team1_name": "Szkocja",
         "team1_score": 1,
-        "team1_flag": "gb",
+        "team1_flag": "gb-sct",
         "team2_name": "Szwajcaria",
         "team2_score": 1,
         "team2_flag": "ch",
@@ -52,7 +52,7 @@
     {
         "team1_name": "Szkocja",
         "team1_score": 0,
-        "team1_flag": "gb",
+        "team1_flag": "gb-sct",
         "team2_name": "Węgry",
         "team2_score": 1,
         "team2_flag": "hu",
