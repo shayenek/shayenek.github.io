@@ -1,0 +1,290 @@
+[
+    {
+        "team1_name": "Niemcy",
+        "team1_score": 5,
+        "team2_name": "Szkocja",
+        "team2_score": 1,
+        "winner": "team1",
+        "winner_name": "Niemcy"
+    },
+    {
+        "team1_name": "Węgry",
+        "team1_score": 1,
+        "team2_name": "Szwajcaria",
+        "team2_score": 3,
+        "winner": "team2",
+        "winner_name": "Szwajcaria"
+    },
+    {
+        "team1_name": "Niemcy",
+        "team1_score": 2,
+        "team2_name": "Węgry",
+        "team2_score": 0,
+        "winner": "team1",
+        "winner_name": "Niemcy"
+    },
+    {
+        "team1_name": "Szkocja",
+        "team1_score": 1,
+        "team2_name": "Szwajcaria",
+        "team2_score": 1,
+        "winner": "draw",
+        "winner_name": "Remis"
+    },
+    {
+        "team1_name": "Szwajcaria",
+        "team1_score": 1,
+        "team2_name": "Niemcy",
+        "team2_score": 1,
+        "winner": "draw",
+        "winner_name": "Remis"
+    },
+    {
+        "team1_name": "Szkocja",
+        "team1_score": 0,
+        "team2_name": "Węgry",
+        "team2_score": 1,
+        "winner": "team2",
+        "winner_name": "Węgry"
+    },
+    {
+        "team1_name": "Hiszpania",
+        "team1_score": 3,
+        "team2_name": "Chorwacja",
+        "team2_score": 0,
+        "winner": "team1",
+        "winner_name": "Hiszpania"
+    },
+    {
+        "team1_name": "Włochy",
+        "team1_score": 2,
+        "team2_name": "Albania",
+        "team2_score": 1,
+        "winner": "team1",
+        "winner_name": "Włochy"
+    },
+    {
+        "team1_name": "Chorwacja",
+        "team1_score": 2,
+        "team2_name": "Albania",
+        "team2_score": 2,
+        "winner": "draw",
+        "winner_name": "Remis"
+    },
+    {
+        "team1_name": "Hiszpania",
+        "team1_score": 1,
+        "team2_name": "Włochy",
+        "team2_score": 0,
+        "winner": "team1",
+        "winner_name": "Hiszpania"
+    },
+    {
+        "team1_name": "Albania",
+        "team1_score": 0,
+        "team2_name": "Hiszpania",
+        "team2_score": 1,
+        "winner": "team2",
+        "winner_name": "Hiszpania"
+    },
+    {
+        "team1_name": "Chorwacja",
+        "team1_score": 1,
+        "team2_name": "Włochy",
+        "team2_score": 1,
+        "winner": "draw",
+        "winner_name": "Remis"
+    },
+    {
+        "team1_name": "Słowenia",
+        "team1_score": 1,
+        "team2_name": "Dania",
+        "team2_score": 1,
+        "winner": "draw",
+        "winner_name": "Remis"
+    },
+    {
+        "team1_name": "Serbia",
+        "team1_score": 0,
+        "team2_name": "Anglia",
+        "team2_score": 1,
+        "winner": "team2",
+        "winner_name": "Anglia"
+    },
+    {
+        "team1_name": "Słowenia",
+        "team1_score": 1,
+        "team2_name": "Serbia",
+        "team2_score": 1,
+        "winner": "draw",
+        "winner_name": "Remis"
+    },
+    {
+        "team1_name": "Dania",
+        "team1_score": 1,
+        "team2_name": "Anglia",
+        "team2_score": 1,
+        "winner": "draw",
+        "winner_name": "Remis"
+    },
+    {
+        "team1_name": "Dania",
+        "team1_score": 0,
+        "team2_name": "Serbia",
+        "team2_score": 0,
+        "winner": "draw",
+        "winner_name": "Remis"
+    },
+    {
+        "team1_name": "Anglia",
+        "team1_score": 0,
+        "team2_name": "Słowenia",
+        "team2_score": 0,
+        "winner": "draw",
+        "winner_name": "Remis"
+    },
+    {
+        "team1_name": "Polska",
+        "team1_score": 1,
+        "team2_name": "Holandia",
+        "team2_score": 2,
+        "winner": "team2",
+        "winner_name": "Holandia"
+    },
+    {
+        "team1_name": "Austria",
+        "team1_score": 0,
+        "team2_name": "Francja",
+        "team2_score": 1,
+        "winner": "team2",
+        "winner_name": "Francja"
+    },
+    {
+        "team1_name": "Polska",
+        "team1_score": 1,
+        "team2_name": "Austria",
+        "team2_score": 3,
+        "winner": "team2",
+        "winner_name": "Austria"
+    },
+    {
+        "team1_name": "Holandia",
+        "team1_score": 0,
+        "team2_name": "Francja",
+        "team2_score": 0,
+        "winner": "draw",
+        "winner_name": "Remis"
+    },
+    {
+        "team1_name": "Francja",
+        "team1_score": 1,
+        "team2_name": "Polska",
+        "team2_score": 1,
+        "winner": "draw",
+        "winner_name": "Remis"
+    },
+    {
+        "team1_name": "Holandia",
+        "team1_score": 2,
+        "team2_name": "Austria",
+        "team2_score": 3,
+        "winner": "team2",
+        "winner_name": "Austria"
+    },
+    {
+        "team1_name": "Rumunia",
+        "team1_score": 3,
+        "team2_name": "Ukraina",
+        "team2_score": 0,
+        "winner": "team1",
+        "winner_name": "Rumunia"
+    },
+    {
+        "team1_name": "Belgia",
+        "team1_score": 0,
+        "team2_name": "Słowacja",
+        "team2_score": 1,
+        "winner": "team2",
+        "winner_name": "Słowacja"
+    },
+    {
+        "team1_name": "Słowacja",
+        "team1_score": 1,
+        "team2_name": "Ukraina",
+        "team2_score": 2,
+        "winner": "team2",
+        "winner_name": "Ukraina"
+    },
+    {
+        "team1_name": "Belgia",
+        "team1_score": 2,
+        "team2_name": "Rumunia",
+        "team2_score": 0,
+        "winner": "team1",
+        "winner_name": "Belgia"
+    },
+    {
+        "team1_name": "Słowacja",
+        "team1_score": 1,
+        "team2_name": "Rumunia",
+        "team2_score": 1,
+        "winner": "draw",
+        "winner_name": "Remis"
+    },
+    {
+        "team1_name": "Ukraina",
+        "team1_score": 0,
+        "team2_name": "Belgia",
+        "team2_score": 0,
+        "winner": "draw",
+        "winner_name": "Remis"
+    },
+    {
+        "team1_name": "Turcja",
+        "team1_score": 3,
+        "team2_name": "Gruzja",
+        "team2_score": 1,
+        "winner": "team1",
+        "winner_name": "Turcja"
+    },
+    {
+        "team1_name": "Portugalia",
+        "team1_score": 2,
+        "team2_name": "Czechy",
+        "team2_score": 1,
+        "winner": "team1",
+        "winner_name": "Portugalia"
+    },
+    {
+        "team1_name": "Gruzja",
+        "team1_score": 1,
+        "team2_name": "Czechy",
+        "team2_score": 1,
+        "winner": "draw",
+        "winner_name": "Remis"
+    },
+    {
+        "team1_name": "Turcja",
+        "team1_score": 0,
+        "team2_name": "Portugalia",
+        "team2_score": 3,
+        "winner": "team2",
+        "winner_name": "Portugalia"
+    },
+    {
+        "team1_name": "Gruzja",
+        "team1_score": 2,
+        "team2_name": "Portugalia",
+        "team2_score": 0,
+        "winner": "team1",
+        "winner_name": "Gruzja"
+    },
+    {
+        "team1_name": "Czechy",
+        "team1_score": 1,
+        "team2_name": "Turcja",
+        "team2_score": 2,
+        "winner": "team2",
+        "winner_name": "Turcja"
+    }
+]
