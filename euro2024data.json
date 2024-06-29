@@ -1,5 +1,6 @@
 [
     {
+        "match_id": 1,
         "team1_name": "Niemcy",
         "team1_score": 5,
         "team1_flag": "de",
@@ -10,6 +11,7 @@
         "winner_name": "Niemcy"
     },
     {
+        "match_id": 2,
         "team1_name": "Węgry",
         "team1_score": 1,
         "team1_flag": "hu",
@@ -20,6 +22,7 @@
         "winner_name": "Szwajcaria"
     },
     {
+        "match_id": 3,
         "team1_name": "Niemcy",
         "team1_score": 2,
         "team1_flag": "de",
@@ -30,6 +33,7 @@
         "winner_name": "Niemcy"
     },
     {
+        "match_id": 4,
         "team1_name": "Szkocja",
         "team1_score": 1,
         "team1_flag": "gb-sct",
@@ -40,6 +44,7 @@
         "winner_name": "Remis"
     },
     {
+        "match_id": 5,
         "team1_name": "Szwajcaria",
         "team1_score": 1,
         "team1_flag": "ch",
@@ -50,6 +55,7 @@
         "winner_name": "Remis"
     },
     {
+        "match_id": 6,
         "team1_name": "Szkocja",
         "team1_score": 0,
         "team1_flag": "gb-sct",
@@ -60,6 +66,7 @@
         "winner_name": "Węgry"
     },
     {
+        "match_id": 7,
         "team1_name": "Hiszpania",
         "team1_score": 3,
         "team1_flag": "es",
@@ -70,6 +77,7 @@
         "winner_name": "Hiszpania"
     },
     {
+        "match_id": 8,
         "team1_name": "Włochy",
         "team1_score": 2,
         "team1_flag": "it",
@@ -80,6 +88,7 @@
         "winner_name": "Włochy"
     },
     {
+        "match_id": 9,
         "team1_name": "Chorwacja",
         "team1_score": 2,
         "team1_flag": "hr",
@@ -90,6 +99,7 @@
         "winner_name": "Remis"
     },
     {
+        "match_id": 10,
         "team1_name": "Hiszpania",
         "team1_score": 1,
         "team1_flag": "es",
@@ -100,6 +110,7 @@
         "winner_name": "Hiszpania"
     },
     {
+        "match_id": 11,
         "team1_name": "Albania",
         "team1_score": 0,
         "team1_flag": "al",
@@ -110,6 +121,7 @@
         "winner_name": "Hiszpania"
     },
     {
+        "match_id": 12,
         "team1_name": "Chorwacja",
         "team1_score": 1,
         "team1_flag": "hr",
@@ -120,6 +132,7 @@
         "winner_name": "Remis"
     },
     {
+        "match_id": 13,
         "team1_name": "Słowenia",
         "team1_score": 1,
         "team1_flag": "si",
@@ -130,6 +143,7 @@
         "winner_name": "Remis"
     },
     {
+        "match_id": 14,
         "team1_name": "Serbia",
         "team1_score": 0,
         "team1_flag": "rs",
@@ -140,6 +154,7 @@
         "winner_name": "Anglia"
     },
     {
+        "match_id": 15,
         "team1_name": "Słowenia",
         "team1_score": 1,
         "team1_flag": "si",
@@ -150,6 +165,7 @@
         "winner_name": "Remis"
     },
     {
+        "match_id": 16,
         "team1_name": "Dania",
         "team1_score": 1,
         "team1_flag": "dk",
@@ -160,6 +176,7 @@
         "winner_name": "Remis"
     },
     {
+        "match_id": 17,
         "team1_name": "Dania",
         "team1_score": 0,
         "team1_flag": "dk",
@@ -170,6 +187,7 @@
         "winner_name": "Remis"
     },
     {
+        "match_id": 18,
         "team1_name": "Anglia",
         "team1_score": 0,
         "team1_flag": "gb",
@@ -180,6 +198,7 @@
         "winner_name": "Remis"
     },
     {
+        "match_id": 19,
         "team1_name": "Polska",
         "team1_score": 1,
         "team1_flag": "pl",
@@ -190,6 +209,7 @@
         "winner_name": "Holandia"
     },
     {
+        "match_id": 20,
         "team1_name": "Austria",
         "team1_score": 0,
         "team1_flag": "at",
@@ -200,6 +220,7 @@
         "winner_name": "Francja"
     },
     {
+        "match_id": 21,
         "team1_name": "Polska",
         "team1_score": 1,
         "team1_flag": "pl",
@@ -210,6 +231,7 @@
         "winner_name": "Austria"
     },
     {
+        "match_id": 22,
         "team1_name": "Holandia",
         "team1_score": 0,
         "team1_flag": "nl",
@@ -220,6 +242,7 @@
         "winner_name": "Remis"
     },
     {
+        "match_id": 23,
         "team1_name": "Francja",
         "team1_score": 1,
         "team1_flag": "fr",
@@ -230,6 +253,7 @@
         "winner_name": "Remis"
     },
     {
+        "match_id": 24,
         "team1_name": "Holandia",
         "team1_score": 2,
         "team1_flag": "nl",
@@ -240,6 +264,7 @@
         "winner_name": "Austria"
     },
     {
+        "match_id": 25,
         "team1_name": "Rumunia",
         "team1_score": 3,
         "team1_flag": "ro",
@@ -250,6 +275,7 @@
         "winner_name": "Rumunia"
     },
     {
+        "match_id": 26,
         "team1_name": "Belgia",
         "team1_score": 0,
         "team1_flag": "be",
@@ -260,6 +286,7 @@
         "winner_name": "Słowacja"
     },
     {
+        "match_id": 27,
         "team1_name": "Słowacja",
         "team1_score": 1,
         "team1_flag": "sk",
@@ -270,6 +297,7 @@
         "winner_name": "Ukraina"
     },
     {
+        "match_id": 28,
         "team1_name": "Belgia",
         "team1_score": 2,
         "team1_flag": "be",
@@ -280,6 +308,7 @@
         "winner_name": "Belgia"
     },
     {
+        "match_id": 29,
         "team1_name": "Słowacja",
         "team1_score": 1,
         "team1_flag": "sk",
@@ -290,6 +319,7 @@
         "winner_name": "Remis"
     },
     {
+        "match_id": 30,
         "team1_name": "Ukraina",
         "team1_score": 0,
         "team1_flag": "ua",
@@ -300,6 +330,7 @@
         "winner_name": "Remis"
     },
     {
+        "match_id": 31,
         "team1_name": "Turcja",
         "team1_score": 3,
         "team1_flag": "tr",
@@ -310,6 +341,7 @@
         "winner_name": "Turcja"
     },
     {
+        "match_id": 32,
         "team1_name": "Portugalia",
         "team1_score": 2,
         "team1_flag": "pt",
@@ -320,6 +352,7 @@
         "winner_name": "Portugalia"
     },
     {
+        "match_id": 33,
         "team1_name": "Gruzja",
         "team1_score": 1,
         "team1_flag": "ge",
@@ -330,6 +363,7 @@
         "winner_name": "Remis"
     },
     {
+        "match_id": 34,
         "team1_name": "Turcja",
         "team1_score": 0,
         "team1_flag": "tr",
@@ -340,6 +374,7 @@
         "winner_name": "Portugalia"
     },
     {
+        "match_id": 35,
         "team1_name": "Gruzja",
         "team1_score": 2,
         "team1_flag": "ge",
@@ -350,6 +385,7 @@
         "winner_name": "Gruzja"
     },
     {
+        "match_id": 36,
         "team1_name": "Czechy",
         "team1_score": 1,
         "team1_flag": "cz",
