@@ -51,7 +51,6 @@
         function createMatchDivsFromData(data) {
             const container = document.getElementById('matches');
             data.forEach((match, index) => {
-                // Add group header every 6 matches
                 if (index % 6 === 0) {
                     const groupHeader = document.createElement('h2');
                     groupHeader.classList.add('font-bold', 'text-xl', 'mt-6', 'mb-2', 'text-center');
@@ -61,8 +60,8 @@
                 const matchDiv = document.createElement('div');
                 matchDiv.classList.add('flex', 'flex-col', 'item', 'mb-8');
                 matchDiv.innerHTML = `
-                    <div id="match_id_${match.match_id}" class="flex gap-4 border rounded border-gray-600 p-3 py-5 bg-gray-100">
-                        <div class="flex flex-col items-center grow">
+                    <div id="match_id_${match.match_id}" class="flex border rounded border-gray-600 p-3 py-5 bg-gray-100">
+                        <div class="team1_input flex flex-col items-center grow">
                             <div class="flex items-center mb-1">
                                 <img src="images/${match.team1_flag}.png" alt="${match.team1_name}" class="mr-2" width="26" height="27">
                                 <span class="font-bold mb-1">${match.team1_name}</span>
@@ -73,8 +72,9 @@
                                 <button class="flex items-center justify-center bg-red-700 text-white w-6 h-6 ml-2 text-lg" onclick="decrementScore('match_${match.match_id}_team1')">-</button>
                             </div>
                         </div>
-                        <span class="font-bold text-3xl">:</span>
-                        <div class="flex flex-col items-center grow">
+                        <div class="team1_realscore font-bold text-2xl hidden w-full text-center flex items-center justify-center"></div>
+                        <span class="font-bold text-3xl px-4" onclick="showRealScore('match_${match.match_id}')">:</span>
+                        <div class="team2_input flex flex-col items-center grow">
                             <div class="flex items-center mb-1">
                                 <img src="images/${match.team2_flag}.png" alt="${match.team2_name}" class="mr-2" width="26" height="27">
                                 <span class="font-bold mb-1">${match.team2_name}</span>
@@ -85,6 +85,7 @@
                                 <button class="flex items-center justify-center bg-red-700 text-white w-6 h-6 ml-2 text-lg" onclick="decrementScore('match_${match.match_id}_team2')">-</button>
                             </div>
                         </div>
+                        <div class="team2_realscore font-bold text-2xl hidden w-full text-center flex items-center justify-center"></div>
                     </div>
                 `;
                 container.appendChild(matchDiv);
@@ -156,9 +157,7 @@
         document.getElementById('reset').addEventListener('click', resetScores);
 
         function resetScores() {
-            // Show confirmation dialog
             if (confirm("Na pewno chcesz zrestować swoje wyniki?")) {
-                // User confirmed, proceed with reset
                 fetchedData.forEach((match, index) => {
                     document.getElementById(`match_${match.match_id}_team1`).value = '';
                     document.getElementById(`match_${match.match_id}_team2`).value = '';
@@ -225,6 +224,19 @@
                     calculatePoints();
                 };
                 reader.readAsText(file);
+            }
+        }
+
+        function showRealScore(matchId) {
+            const match = fetchedData.find(match => `match_${match.match_id}` === matchId);
+            if (match) {
+                const matchDiv = document.getElementById(`match_id_${match.match_id}`);
+                matchDiv.querySelector('.team1_input').classList.toggle('hidden');
+                matchDiv.querySelector('.team2_input').classList.toggle('hidden');
+                matchDiv.querySelector('.team1_realscore').innerText = match.team1_score;
+                matchDiv.querySelector('.team2_realscore').innerText = match.team2_score;;
+                matchDiv.querySelector('.team1_realscore').classList.toggle('hidden');
+                matchDiv.querySelector('.team2_realscore').classList.toggle('hidden');
             }
         }
 
