@@ -37,7 +37,6 @@
                 fetchedData = data;
                 createMatchDivsFromData(data);
                 loadMyScoresFromLocalStorage();
-                calculatePoints();
             })
             .catch(error => {
                 console.error('There has been a problem with your fetch operation:', error);
@@ -177,6 +176,7 @@
                         document.getElementById(`match_${match.match_id}_team2`).value = matchScores.team2_score;
                     }
                 });
+                calculatePoints();
             }
         }
 
