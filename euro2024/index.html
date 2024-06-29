@@ -10,6 +10,12 @@
     <main class="flex flex-col p-4 justify-center items-center">
         <h1 class="font-bold text-3xl">Jasińscy Euro 2024</h1>
         <p class="text-base text-center my-4">Poniżej znajduje się lista meczów grupowych. Wpisz swoje obstawione wyniki a otrzymasz sumę punktów. (trafiony wynik: 3pkt, trafiony zwycięzca: 1pkt)</p>
+        <div class="flex gap-4">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="saveScoresToFileAndDownload()">Pobierz swoje typy</button>
+            <input type="file" id="scoresfile" accept=".json" style="display: none;" onchange="loadScoresFromFile()">
+            <label for="scoresfile" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer">Wczytaj typy</label>
+        </div>
+
         <div id="matches" class="flex flex-col w-full mb-12"></div>
         
         <div class="flex items-center justify-center gap-8 fixed bottom-0 left-0 right-0 p-3 bg-gray-400 text-gray-600 text-sm shadow-sm">
@@ -161,7 +167,6 @@
                 document.getElementById('points').innerText = 0;
                 localStorage.removeItem('scores');
             } else {
-                // User canceled, do nothing
                 return;
             }
         }
@@ -189,6 +194,38 @@
                 };
             });
             localStorage.setItem('scores', JSON.stringify(scores));
+        }
+
+        function saveScoresToFileAndDownload() {
+            const scores = JSON.parse(localStorage.getItem('scores'));
+            if (scores) {
+                const blob = new Blob([JSON.stringify(scores, null, 2)], {type: 'application/json'});
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'wynikieuro2024.json';
+                a.click();
+                URL.revokeObjectURL(url);
+            }
+        }
+
+        function loadScoresFromFile() {
+            const file = document.getElementById('scoresfile').files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const scores = JSON.parse(e.target.result);
+                    fetchedData.forEach((match, index) => {
+                        const matchScores = scores[match.match_id];
+                        if (matchScores) {
+                            document.getElementById(`match_${match.match_id}_team1`).value = matchScores.team1_score;
+                            document.getElementById(`match_${match.match_id}_team2`).value = matchScores.team2_score;
+                        }
+                    });
+                    calculatePoints();
+                };
+                reader.readAsText(file);
+            }
         }
 
     </script>
