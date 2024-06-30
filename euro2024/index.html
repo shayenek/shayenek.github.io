@@ -133,13 +133,18 @@
                     points += 3;
                     document.getElementById(`match_id_${match.match_id}`).classList.remove('bg-orange-300', 'bg-red-300');
                     document.getElementById(`match_id_${match.match_id}`).classList.add('bg-green-300');
-                } else if (team1Score > team2Score && match.winner === 'team1') {
+                } else if ((team1Score > team2Score && match.winner === 'team1') || (team1Score < team2Score && match.winner === 'team2')) {
                     console.log('Trafiony zwycięzca dla meczu ' + match.match_id);
                     points += 1;
                     document.getElementById(`match_id_${match.match_id}`).classList.remove('bg-orange-300', 'bg-red-300');
                     document.getElementById(`match_id_${match.match_id}`).classList.add('bg-orange-300');
-                } else if (team1Score < team2Score && match.winner === 'team2') {
-                    console.log('Trafiony zwycięzca dla meczu ' + match.match_id);
+                } else if (team1Score === team2Score && match.team1_score === match.team2_score && team1Score !== match.team1_score) {
+                    console.log('Trafiony remis w meczu ' + match.match_id);
+                    points += 1;
+                    document.getElementById(`match_id_${match.match_id}`).classList.remove('bg-orange-300', 'bg-red-300');
+                    document.getElementById(`match_id_${match.match_id}`).classList.add('bg-orange-300');
+                } else if (team1Score === team2Score && match.team1_score === match.team2_score) {
+                    console.log('Trafiony remis z innym wynikiem dla meczu ' + match.match_id);
                     points += 1;
                     document.getElementById(`match_id_${match.match_id}`).classList.remove('bg-orange-300', 'bg-red-300');
                     document.getElementById(`match_id_${match.match_id}`).classList.add('bg-orange-300');
@@ -147,7 +152,6 @@
                     document.getElementById(`match_id_${match.match_id}`).classList.remove('bg-orange-300', 'bg-red-300');
                     document.getElementById(`match_id_${match.match_id}`).classList.add('bg-red-300');
                 }
-
             });
             document.getElementById('points').innerText = points;
 
