@@ -553,7 +553,7 @@
                           "data-url": "/grafik-komputerowy",
                           onClick: function (e) {
                             e.preventDefault(),
-                              (window.location.href = "files/CV-Michał-Dychtanowski-ENG.pdf");
+                              (window.location.href = "files/CV2025.pdf");
                           },
                         },
                         l.a.createElement("span", null, "Check my CV")
